@@ -34,8 +34,9 @@
     </RequiredPackages>
     <Units Count="3">
       <Unit0>
-        <Filename Value="test_Lazarus_10_3.dpr"/>
+        <Filename Value="test_lazarus_10_3.dpr"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="test_Lazarus_10_3"/>
       </Unit0>
       <Unit1>
         <Filename Value="main.pas"/>

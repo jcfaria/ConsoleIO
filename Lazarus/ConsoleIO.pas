@@ -11,7 +11,10 @@ unit ConsoleIO;
 interface
 
 uses
-  Messages, Windows, SysUtils, Classes, Forms{, AnsiStrings};
+  Messages, Windows, SysUtils, Classes, Forms,
+
+  {https://forum.lazarus.freepascal.org/index.php?topic=36449.0}
+  LCLIntf;
 
 const
   MIO_OFFSET = $1911;
@@ -113,7 +116,7 @@ var
 begin
   SaveHandle:= Handle;
   Handle:= 0;
-  //WinCheck(FileClose(SaveHandle) { *Convertido de CloseHandle* });
+  WinCheck(CloseHandle(SaveHandle));
 end;
 
 function ToPChar(const St: AnsiString): PAnsiChar;
@@ -131,7 +134,6 @@ begin
 end;
 
 { Thread functions }
-
 procedure IOReadOutput(Handler: TConsoleIO);
 begin
   Handler.ReaderProc(Handler.OutputReadPipe,
@@ -173,7 +175,10 @@ begin
   FSplitSend:= True;
   FStopProcessOnFree:= True;
   FWaitTimeout:= 1000;
-  FWindowHandle:= Classes.AllocateHWnd(WndProc);
+  //FWindowHandle:= Classes.AllocateHWnd(WndProc);
+  {https://forum.lazarus.freepascal.org/index.php?topic=36449.0}
+  // Recomend use of LCLIntf!
+  FWindowHandle:= LCLIntf.AllocateHWnd(WndProc);
 end;
 
 destructor TConsoleIO.Destroy;
@@ -368,6 +373,7 @@ var
 
   //ThreadId: Cardinal;
   ThreadId: NativeUInt;
+
 begin
   SA.nLength:= SizeOf(SA);
   SA.lpSecurityDescriptor:= nil;
@@ -377,10 +383,12 @@ begin
                       InputWriteTmp,
                       @SA,
                       0));
+
   WinCheck(CreatePipe(OutputReadTmp,
                       OutputWritePipe,
                       @SA,
                       0));
+
   WinCheck(CreatePipe(ErrorReadTmp,
                       ErrorWritePipe,
                       @SA,
@@ -388,8 +396,10 @@ begin
 
   InprocessDuplicateHandle(InputWriteTmp,
                            InputWritePipe);
+
   InprocessDuplicateHandle(OutputReadTmp,
                            OutputReadPipe);
+
   InprocessDuplicateHandle(ErrorReadTmp,
                            ErrorReadPipe);
 
@@ -426,12 +436,14 @@ begin
               Self,
               0,
               ThreadId);
+
   BeginThread(nil,
               0,
               @IOReadError,
               Self,
               0,
               ThreadId);
+
   BeginThread(nil,
               0,
               @WaitProcess,
@@ -443,6 +455,7 @@ end;
 procedure TConsoleIO.SendInput(Msg: AnsiString);
 var
   BytesWritten: Cardinal;
+
 begin
   Msg:= Msg + SplitSendAvail;
   WinCheck(WriteFile(InputWritePipe,
@@ -455,6 +468,7 @@ end;
 procedure TConsoleIO.WndProc(var Msg: TMessage);
 var
   Unhandled: Boolean;
+
 begin
   with Msg do
   begin
@@ -490,12 +504,14 @@ var
   Buf: array[0..1024] of AnsiChar;
   BytesRead: Cardinal;
   Err: AnsiString;
+
 begin
   repeat
     if not ReadFile(Handle,
                     Buf,
                     SizeOf(Buf),
-                    BytesRead, nil) then
+                    BytesRead,
+                    nil) then
       try
         if not IsRunning then Exit;
         RaiseLastOSError;
@@ -546,7 +562,7 @@ end;
 procedure TConsoleIO.CloseProcessHandle;
 begin
   if ProcessHandle = 0 then Exit;
-  //WinCheck(FileClose(ProcessHandle) { *Convertido de CloseHandle* });
+  WinCheck(CloseHandle(ProcessHandle));
   ProcessHandle:= 0;
 end;
 

@@ -110,10 +110,10 @@ end;
 
 procedure TfrmMain.RefreshButtonState;
 begin
-  //if Assigned(RunBtn) then
-  //  RunBtn.Enabled:= not ConsoleIO.IsRunning;
-  //if Assigned(StopBtn) then
-  //  StopBtn.Enabled:= ConsoleIO.IsRunning;
+  if Assigned(RunBtn) then
+    RunBtn.Enabled:= not ConsoleIO.IsRunning;
+  if Assigned(StopBtn) then
+    StopBtn.Enabled:= ConsoleIO.IsRunning;
 end;
 
 procedure TfrmMain.ExitBtnClick(Sender: TObject);
@@ -123,12 +123,12 @@ end;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
-  //ConsoleIO:= TConsoleIO.Create;
-  //ConsoleIO.OnReceiveOutput:= ConsoleIO_ReceiveOutput;
-  //ConsoleIO.OnReceiveError:= ConsoleIO_ReceiveError;
-  //ConsoleIO.OnError:= ConsoleIO_Error;
-  //ConsoleIO.OnProcessStatusChange:= ConsoleIO_ProcessStatusChange;
-  //ConsoleIO.TerminateCommand:= 'quit()';
+  ConsoleIO:= TConsoleIO.Create;
+  ConsoleIO.OnReceiveOutput      := ConsoleIO_ReceiveOutput;
+  ConsoleIO.OnReceiveError       := ConsoleIO_ReceiveError;
+  ConsoleIO.OnError              := ConsoleIO_Error;
+  ConsoleIO.OnProcessStatusChange:= ConsoleIO_ProcessStatusChange;
+  ConsoleIO.TerminateCommand:= 'quit()';
 end;
 
 procedure TfrmMain.FormResize(Sender: TObject);
@@ -136,37 +136,39 @@ var
   MemoWidth: Integer;
 begin
   MemoWidth := (ClientWidth - 32) div 3;
-  OutputMemo.Width := MemoWidth;
+  OutputMemo.Width:= MemoWidth;
   ErrorMemo.Width := MemoWidth;
   DebugMemo.Width := MemoWidth;
   OutputMemo.Left := 8;
-  ErrorMemo.Left := OutputMemo.Left + OutputMemo.Width + 8;
-  DebugMemo.Left := ErrorMemo.Left + ErrorMemo.Width + 8;
-  OutputLabel.Left := OutputMemo.Left + 8;
+  ErrorMemo.Left  := OutputMemo.Left + OutputMemo.Width + 8;
+  DebugMemo.Left  := ErrorMemo.Left + ErrorMemo.Width + 8;
+  OutputLabel.Left:= OutputMemo.Left + 8;
   ErrorLabel.Left := ErrorMemo.Left + 8;
   DebugLabel.Left := DebugMemo.Left + 8;
 end;
 
 procedure TfrmMain.EnableKillCheckClick(Sender: TObject);
 begin
-  ConsoleIO.EnableKill := EnableKillCheck.Checked;
+  ConsoleIO.EnableKill:= EnableKillCheck.Checked;
 end;
 
 procedure TfrmMain.StopOnFreeCheckClick(Sender: TObject);
 begin
-  ConsoleIO.StopProcessOnFree := StopOnFreeCheck.Checked;
+  ConsoleIO.StopProcessOnFree:= StopOnFreeCheck.Checked;
 end;
 
 procedure TfrmMain.SetTerminateCommandBtnClick(Sender: TObject);
 begin
-  ConsoleIO.TerminateCommand := InputBox('Input',
-    'Set terminate command for process:', ConsoleIO.TerminateCommand);
+  ConsoleIO.TerminateCommand:= InputBox('Input',
+                                        'Set terminate command for process:',
+                                        ConsoleIO.TerminateCommand);
 end;
 
 procedure TfrmMain.SetWaitTimeoutBtnClick(Sender: TObject);
 begin
-  ConsoleIO.WaitTimeout := StrToInt(InputBox('Input',
-    'Set wait process timeout:', IntToStr(ConsoleIO.WaitTimeout)));
+  ConsoleIO.WaitTimeout:= StrToInt(InputBox('Input',
+                                            'Set wait process timeout:',
+                                            IntToStr(ConsoleIO.WaitTimeout)));
 end;
 
 end.
