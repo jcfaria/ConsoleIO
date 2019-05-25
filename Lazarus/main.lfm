@@ -1,0 +1,201 @@
+object frmMain: TfrmMain
+  Left = 635
+  Height = 502
+  Top = 124
+  Width = 632
+  Caption = 'ConsoleIO - Tests'
+  ClientHeight = 502
+  ClientWidth = 632
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  OnCreate = FormCreate
+  OnResize = FormResize
+  OnShow = FormShow
+  Position = poDefault
+  LCLVersion = '2.0.2.0'
+  object ApplicationLabel: TLabel
+    Left = 8
+    Height = 13
+    Top = 12
+    Width = 52
+    Caption = 'Application'
+    ParentColor = False
+  end
+  object CommandLabel: TLabel
+    Left = 8
+    Height = 13
+    Top = 44
+    Width = 47
+    Caption = 'Command'
+    ParentColor = False
+  end
+  object OutputLabel: TLabel
+    Left = 16
+    Height = 13
+    Top = 81
+    Width = 49
+    Caption = 'Std output'
+    ParentColor = False
+  end
+  object ErrorLabel: TLabel
+    Left = 224
+    Height = 13
+    Top = 78
+    Width = 40
+    Caption = 'Std error'
+    ParentColor = False
+  end
+  object DebugLabel: TLabel
+    Left = 432
+    Height = 13
+    Top = 81
+    Width = 32
+    Caption = 'Debug'
+    ParentColor = False
+  end
+  object CommandLineEdit: TEdit
+    Left = 64
+    Height = 21
+    Top = 8
+    Width = 344
+    TabOrder = 0
+    Text = 'C:\Program Files\R\R-devel\bin\x64\Rterm.exe --no-save'
+  end
+  object CommandEdit: TEdit
+    Left = 64
+    Height = 21
+    Top = 40
+    Width = 344
+    TabOrder = 3
+    Text = 'a=rnorm(1e3); a'
+  end
+  object RunBtn: TButton
+    Left = 425
+    Height = 25
+    Top = 6
+    Width = 75
+    Caption = 'RunBtn'
+    OnClick = RunBtnClick
+    TabOrder = 1
+  end
+  object StopBtn: TButton
+    Left = 507
+    Height = 25
+    Top = 6
+    Width = 75
+    Caption = 'StopBtn'
+    OnClick = StopBtnClick
+    TabOrder = 2
+  end
+  object SendBtn: TButton
+    Left = 425
+    Height = 25
+    Top = 38
+    Width = 75
+    Caption = 'SendBtn'
+    OnClick = SendBtnClick
+    TabOrder = 4
+  end
+  object OutputMemo: TMemo
+    Left = 8
+    Height = 353
+    Top = 96
+    Width = 201
+    Anchors = [akTop, akLeft, akBottom]
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Courier New'
+    Lines.Strings = (
+      'OutputMemo'
+    )
+    ParentFont = False
+    ScrollBars = ssBoth
+    TabOrder = 5
+  end
+  object ErrorMemo: TMemo
+    Left = 216
+    Height = 353
+    Top = 96
+    Width = 201
+    Anchors = [akTop, akLeft, akBottom]
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Courier New'
+    Lines.Strings = (
+      'ErrorMemo'
+    )
+    ParentFont = False
+    ScrollBars = ssBoth
+    TabOrder = 6
+  end
+  object DebugMemo: TMemo
+    Left = 424
+    Height = 353
+    Top = 96
+    Width = 201
+    Anchors = [akTop, akLeft, akBottom]
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Courier New'
+    Lines.Strings = (
+      'DebugMemo'
+    )
+    ParentFont = False
+    ScrollBars = ssBoth
+    TabOrder = 7
+  end
+  object ExitBtn: TButton
+    Left = 544
+    Height = 25
+    Top = 464
+    Width = 81
+    Anchors = [akRight, akBottom]
+    Caption = 'Exit'
+    OnClick = ExitBtnClick
+    TabOrder = 12
+  end
+  object EnableKillCheck: TCheckBox
+    Left = 8
+    Height = 19
+    Top = 458
+    Width = 68
+    Anchors = [akLeft, akBottom]
+    Caption = 'Enable kill'
+    OnClick = EnableKillCheckClick
+    TabOrder = 8
+  end
+  object StopOnFreeCheck: TCheckBox
+    Left = 8
+    Height = 19
+    Top = 475
+    Width = 78
+    Anchors = [akLeft, akBottom]
+    Caption = 'Stop on free'
+    Checked = True
+    OnClick = StopOnFreeCheckClick
+    State = cbChecked
+    TabOrder = 9
+  end
+  object SetTerminateCommandBtn: TButton
+    Left = 120
+    Height = 25
+    Top = 464
+    Width = 145
+    Anchors = [akLeft, akBottom]
+    Caption = 'Set terminate command'
+    OnClick = SetTerminateCommandBtnClick
+    TabOrder = 10
+  end
+  object SetWaitTimeoutBtn: TButton
+    Left = 270
+    Height = 25
+    Top = 464
+    Width = 148
+    Anchors = [akLeft, akBottom]
+    Caption = 'Set wait timeout'
+    OnClick = SetWaitTimeoutBtnClick
+    TabOrder = 11
+  end
+end

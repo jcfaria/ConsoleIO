@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="8">
+      <Unit0>
+        <Filename Value="test_Lazarus_10_3.dpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="14"/>
+        <UsageCount Value="22"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="main.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="47"/>
+        <CursorPos X="3" Y="61"/>
+        <UsageCount Value="22"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="ConsoleIO.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="363"/>
+        <CursorPos X="21" Y="376"/>
+        <UsageCount Value="22"/>
+        <Bookmarks Count="3">
+          <Item0 X="3" Y="116" ID="1"/>
+          <Item1 X="14" Y="549" ID="2"/>
+          <Item2 X="21" Y="376" ID="3"/>
+        </Bookmarks>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="C:\lazarus\fpc\3.0.4\source\rtl\win64\classes.pp"/>
+        <UnitName Value="Classes"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="47"/>
+        <UsageCount Value="10"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="C:\lazarus\fpc\3.0.4\source\rtl\objpas\sysutils\filutilh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="151"/>
+        <CursorPos X="11" Y="172"/>
+        <UsageCount Value="10"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="C:\lazarus\fpc\3.0.4\source\rtl\objpas\sysutils\sysutilh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="23"/>
+        <CursorPos X="14" Y="37"/>
+        <UsageCount Value="10"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="C:\lazarus\fpc\3.0.4\source\rtl\win\wininc\struct.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="6883"/>
+        <CursorPos X="6" Y="6897"/>
+        <UsageCount Value="10"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="C:\lazarus\fpc\3.0.4\source\rtl\win\wininc\redef.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="318"/>
+        <CursorPos X="10" Y="332"/>
+        <UsageCount Value="10"/>
+      </Unit7>
+    </Units>
+    <JumpHistory HistoryIndex="-1"/>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+  <Debugging>
+    <BreakPoints Count="9">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="ConsoleIO.pas"/>
+        <Line Value="113"/>
+      </Item1>
+      <Item2>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="ConsoleIO.pas"/>
+        <Line Value="460"/>
+      </Item2>
+      <Item3>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="ConsoleIO.pas"/>
+        <Line Value="429"/>
+      </Item3>
+      <Item4>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="ConsoleIO.pas"/>
+        <Line Value="342"/>
+      </Item4>
+      <Item5>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="ConsoleIO.pas"/>
+        <Line Value="455"/>
+      </Item5>
+      <Item6>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="ConsoleIO.pas"/>
+        <Line Value="115"/>
+      </Item6>
+      <Item7>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="ConsoleIO.pas"/>
+        <Line Value="548"/>
+      </Item7>
+      <Item8>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="ConsoleIO.pas"/>
+        <Line Value="376"/>
+      </Item8>
+      <Item9>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="ConsoleIO.pas"/>
+        <Line Value="380"/>
+      </Item9>
+    </BreakPoints>
+  </Debugging>
+</CONFIG>
