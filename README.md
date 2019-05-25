@@ -1,4 +1,4 @@
-###TConsoleIO by Andrey Sevast'yanov
+#TConsoleIO by Andrey Sevast'yanov
 
 Andrey Sevast'yanov created for Delphi 7 a very useful class: **TConsoleIO**. According to Andrey, it was originally designed to enable communication between applications written in Delphi and chess engine games, but he already stated which could have other uses.
 
