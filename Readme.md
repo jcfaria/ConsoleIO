@@ -14,6 +14,6 @@ Recently a [update of the TConsoleIO class for Delphi XE2](https://www.developpe
 
 From both projects (Andrey and update to XE2) some basic adjustments have been made. This way, without the need to install any component inside the IDE, it is possible to compile and run the test application (test_platform) in the following versions of Delphi: **Delphi 2007**, **Delphi 10.2 Tokyo** and **10.3 Rio**. There is also a first attempt for **Free Pascal under the Lazarus IDE**.
 
-To Free Pascal the test application is compiling but is not running well yet. Thus, I hope that more advanced users in this area of programming (pipe/pipe) can make their contribution by correcting some problems encountered. 
+To the Free Pascal the test application is compiling but is not running nice yet. Thus, I hope that more advanced users in this area of programming (pipe/IPC) can make their contribution by correcting some problems encountered. 
 
 I think this will be of great use to many Delphi/FreePascal programmers.
