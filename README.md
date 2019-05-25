@@ -1,5 +1,6 @@
 #TConsoleIO by Andrey Sevast'yanov
 
+
 Andrey Sevast'yanov created for Delphi 7 a very useful class: **TConsoleIO**. According to Andrey, it was originally designed to enable communication between applications written in Delphi and chess engine games, but he already stated which could have other uses.
 
 Under **Windows** this class enables the communication of a **Delphi program** with other applications on the same computer (written in Delphi or in other languages) sending and receiving messages quickly, efficiently and securely. **_All specification and control is done by the application side in Delphi. That is, a Client/Server structure is not required._**
